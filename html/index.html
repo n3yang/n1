@@ -28,6 +28,8 @@ html, body{
 	background-color: #3f3b3a;
 	height: 100%;
 	width: 100%;
+	min-width: 700px;
+	min-height: 600px;
 	text-align: center;
 }
 
@@ -41,6 +43,7 @@ html, body{
 	overflow: hidden;
 }
 #index-wrap .nav-footer ul {
+	margin-top: 5px;
 	display: inline-block;
 }
 #index-wrap .nav-footer ul li {
@@ -49,6 +52,11 @@ html, body{
 #index-wrap .nav-footer ul li a:hover {
 	background-color: #FFF;
 }
+#index-wrap .nav-footer .nav .logo {
+	width: 32px;
+	margin-top: -5px;
+}
+
 
 #index-wrap .showcase{
 	display: block;
@@ -260,10 +268,6 @@ html, body{
   transform: translate(-50%, -50%);
 }
 
-.nav .logo {
-	width: 32px;
-	margin-top: -5px;
-}
 
 		</style>
 	</head>
@@ -286,7 +290,7 @@ html, body{
 				<img src="images/logo-120.png" alt="">
 			</div>
 			<nav class="nav-footer">
-				<ul class="nav nav-pills vertical-center">
+				<ul class="nav nav-pills">
 					<li><a><img src="images/menu-1.png"></a></li>
 					<li><a><img src="images/menu-2.png"></a></li>
 					<li><a><img class="logo" src="images/logo-120.png"></a></li>
