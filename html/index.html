@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Here is other meta tags -->
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style type="text/css">
+
+html, body{
+	height: 100%;
+	text-align: center;
+}
+#index-wrap{
+	margin: 0px;
+	padding: 0px;
+	background-color: #3f3b3a;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+#index-wrap .nav-footer{
+	height: 60px;
+	min-height: 60px;
+	position: relative;
+	top: -60px;
+	display: none;
+	background-color: #fff;
+	overflow: hidden;
+}
+#index-wrap .nav-footer ul {
+	display: inline-block;
+}
+#index-wrap .nav-footer ul li {
+	margin: 0 20px 0 20px;
+}
+#index-wrap .nav-footer ul li a:hover {
+	background-color: #FFF;
+}
+
+#index-wrap .showcase{
+	display: block;
+	color: #fff;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	min-height: 300px;
+}
+#index-wrap .showcase .slice{
+	position: relative;
+	width: 1px;
+	height: 1px;
+	display: none;
+}
+#index-wrap .showcase .slice img{
+	opacity: .1;
+}
+
+
+#slice-1 {
+	top: 6%;
+	left: 0%;
+	z-index: 1;
+}
+@keyframes combin1 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+
+#slice-2 {
+	top: 6%;
+	left: 30%;
+	z-index: 2;
+}
+#slice-2 img{
+
+}
+@keyframes combin2 {
+	0%  { opacity: .5;}
+	25% { opacity: .1; }
+	33% { opacity: .5; }
+	50% { opacity: .0; }
+	80% { opacity: .3; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+
+#slice-3 {
+	top: 6%;
+	left: 66%;
+	z-index: 3;
+}
+@keyframes combin3 {
+	0%  { opacity: .1;}
+	25% { opacity: .6; }
+	33% { opacity: .2; }
+	50% { opacity: .8; }
+	66% { opacity: .2; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+
+#slice-4 {
+	display: block;
+	top: 45%;
+	left: 0;
+	z-index: 4;
+}
+#slice-4 img{
+	
+}
+@keyframes combin4 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	66% { opacity: .1; }
+	80% { opacity: .6; }
+	90% { opacity: .3; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+#slice-5 {
+	top: 40%;
+	left: 30%;
+	z-index: 5;
+}
+@keyframes combin5 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+#slice-6 {
+	top: 40%;
+	left: 66%;
+	z-index: 6;
+}
+@keyframes combin6 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+#slice-7 {
+	top: 52.2%;
+	left: 26%;
+	z-index: 7;
+}
+@keyframes combin7 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+#slice-8 {
+	top: 66%;
+	left: 30%;
+	z-index: 8;
+}
+@keyframes combin8 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	60% { opacity: .2; }
+	70% { opacity: .6; }
+	80% { opacity: .2; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+#slice-9 {
+	top: 52.2%;
+	left: 76%;
+	z-index: 9;
+}
+@keyframes combin9 {
+	0%  { opacity: .1;}
+	25% { opacity: .5; }
+	33% { opacity: .2; }
+	50% { opacity: .5; }
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0);
+	}
+}
+
+/*
+#slice-1 {
+
+	z-index: 1;
+	opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+*/
+.showcase-logo{
+	display: none;
+	opacity: 0;
+	/*transform: scale(0);*/
+	zoom: 0.001;
+}
+.vertical-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.nav .logo {
+	width: 32px;
+	margin-top: -5px;
+}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="index-wrap" class="container-fluid">
+			<div class="showcase hidden-xs" style="display: inline-block;">
+				<div id="slice-1" class="slice"><img src="images/logo-slice-1.png"></div>
+ 				<div id="slice-2" class="slice"><img src="images/logo-slice-2.png"></div>
+				<div id="slice-3" class="slice"><img src="images/logo-slice-3.png"></div>
+				<div id="slice-4" class="slice"><img src="images/logo-slice-4.png"></div>
+				<div id="slice-5" class="slice"><img src="images/logo-slice-5.png"></div>
+				<div id="slice-6" class="slice"><img src="images/logo-slice-6.png"></div>
+				<div id="slice-7" class="slice"><img src="images/logo-slice-7.png"></div>
+				<div id="slice-8" class="slice"><img src="images/logo-slice-8.png"></div>
+				<div id="slice-9" class="slice"><img src="images/logo-slice-9.png"></div>
+				<div class="vertical-center showcase-logo"><img src="images/logo-120.png" alt=""></div>
+			</div>
+			<div class="showcase visible-xs-inline-block">
+				<img src="images/logo-120.png" alt="">
+			</div>
+			<nav class="nav-footer">
+				<ul class="nav nav-pills vertical-center">
+					<li><a><img src="images/menu-1.png"></a></li>
+					<li><a><img src="images/menu-2.png"></a></li>
+					<li><a><img class="logo" src="images/logo-120.png"></a></li>
+					<!-- <li><a>你好</a></li> -->
+					<!-- <li><a>你好</a></li> -->
+					<!-- <li><a>你好</a></li> -->
+					<!-- <li><a>你好</a></li> -->
+					<li><a><img src="images/menu-3.png"></a></li>
+					<li><a><img src="images/menu-4.png"></a></li>
+				</ul>
+			</nav>
+		</div>
+
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+$(document).ready(function(){
+
+	var sliceOpacity = [
+
+
+	];
+	var slicePosition = [];
+
+	var sc = $('.showcase');
+	// if (sc.width()>650 || sc.height()>650) {
+	// 	sc.width(650);
+	// 	sc.height(650);
+	// }
+	sc.width(sc.height());
+
+	sc.children('.slice').each(function(i) {
+		i++;
+		$(this).css('-webkit-animation', 'combin' + i + ' 4s ease-in 0s 1 normal forwards')
+			.css('-o-animation', 'combin' + i + ' 4s ease-in 0s 1 normal forwards')
+			.css('-animation', 'combin' + i + ' 4s ease-in 0s 1 normal forwards')
+			.show();
+	});
+
+	// show center logo
+	setTimeout(function(){
+		$('.showcase-logo').show().animate({opacity:"1", zoom:"1"}, 5000, function(){
+			$('#index-wrap .nav-footer').css('right', '100%').animate({right: '0%'}, 600).show();
+		});
+	}, 4500);
+	// $("#box").animate({marginTop:"50px"});
+	// http://www.w3school.com.cn/jquery/effect_animate.asp
+	// show nav bar
+	// setTimeout(function(){
+		// $('#index-wrap .nav-footer').show().css('width', '0%').animate({width: '100%'}, 1000);
+		
+	// }, 6000);
+});
+		</script>
+	</body>
+</html>
+
+<!-- 3f3b3a -->
