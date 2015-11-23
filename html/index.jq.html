@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<!-- Here is other meta tags -->
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<link href="css/common.css" rel="stylesheet">
+		<style type="text/css">
+
+#index-wrap{
+	margin: 0px;
+	padding: 0px;
+	background-color: #3f3b3a;
+	height: 100%;
+	width: 100%;
+	min-width: 700px;
+	min-height: 600px;
+	text-align: center;
+}
+
+#index-wrap .nav-footer{
+	height: 60px;
+	min-height: 60px;
+	position: relative;
+	top: -60px;
+	display: none;
+	background-color: #fff;
+	overflow: hidden;
+}
+#index-wrap .nav-footer ul {
+	margin-top: 5px;
+	display: inline-block;
+}
+#index-wrap .nav-footer ul li {
+	margin: 0 20px 0 20px;
+}
+#index-wrap .nav-footer ul li a:hover {
+	background-color: #FFF;
+}
+#index-wrap .nav-footer .nav .logo {
+	width: 32px;
+	margin-top: -5px;
+}
+
+
+#index-wrap .showcase{
+	display: block;
+	color: #fff;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	min-height: 300px;
+}
+#index-wrap .showcase .slice{
+	position: relative;
+	width: 1px;
+	height: 1px;
+}
+#index-wrap .showcase .slice img{
+	opacity: .5
+}
+#index-wrap .showcase .slice {
+	opacity: .0;
+}
+
+#slice-1 {
+	top: 6%;
+	left: 0%;
+	z-index: 1;
+}
+
+#slice-2 {
+	top: 6%;
+	left: 30%;
+	z-index: 2;
+}
+
+#slice-3 {
+	top: 6%;
+	left: 66%;
+	z-index: 3;
+}
+
+#slice-4 {
+	display: block;
+	top: 45%;
+	left: 0;
+	z-index: 4;
+}
+#slice-5 {
+	top: 40%;
+	left: 30%;
+	z-index: 5;
+}
+#slice-6 {
+	top: 40%;
+	left: 66%;
+	z-index: 6;
+}
+#slice-7 {
+	top: 52.2%;
+	left: 26%;
+	z-index: 7;
+}
+#slice-8 {
+	top: 66%;
+	left: 30%;
+	z-index: 8;
+}
+#slice-9 {
+	top: 52.2%;
+	left: 76%;
+	z-index: 9;
+}
+
+
+.showcase-logo{
+	display: none;
+	opacity: 0;
+	/*transform: scale(0);*/
+	zoom: 0.001;
+}
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<div id="index-wrap" class="container-fluid">
+			<div class="showcase hidden-xs" style="display: inline-block;">
+				<div id="slice-1" class="slice"><img src="images/logo-slice-1.png"></div>
+ 				<div id="slice-2" class="slice"><img src="images/logo-slice-2.png"></div>
+				<div id="slice-3" class="slice"><img src="images/logo-slice-3.png"></div>
+				<div id="slice-4" class="slice"><img src="images/logo-slice-4.png"></div>
+				<div id="slice-5" class="slice"><img src="images/logo-slice-5.png"></div>
+				<div id="slice-6" class="slice"><img src="images/logo-slice-6.png"></div>
+				<div id="slice-7" class="slice"><img src="images/logo-slice-7.png"></div>
+				<div id="slice-8" class="slice"><img src="images/logo-slice-8.png"></div>
+				<div id="slice-9" class="slice"><img src="images/logo-slice-9.png"></div>
+				<div class="vertical-center showcase-logo"><img src="images/logo-120.png" alt=""></div>
+			</div>
+			<div class="showcase visible-xs-inline-block">
+				<img src="images/logo-120.png" alt="">
+			</div>
+			<nav class="nav-footer">
+				<ul class="nav nav-pills">
+					<!-- <li><a><img src="images/menu-1.png"></a></li> -->
+					<!-- <li><a><img src="images/menu-2.png"></a></li> -->
+					<!-- <li><a><img class="logo" src="images/logo-120.png"></a></li> -->
+					<li><a>你好</a></li>
+					<li><a>你好</a></li>
+					<li><a>你好</a></li>
+					<li><a>你好</a></li>
+					<!-- <li><a><img src="images/menu-3.png"></a></li> -->
+					<!-- <li><a><img src="images/menu-4.png"></a></li> -->
+				</ul>
+			</nav>
+		</div>
+
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/qtransform.js"></script>
+		<script type="text/javascript">
+$(document).ready(function(){
+
+	var sliceOpacity = [
+		[],
+		[1, 1, 5, 2, 5, 1],
+		[1, 2, 4, 5, 4, 1],
+		[1, 5, 2, 5, 1, 1],
+		[1, 2, 4, 5, 4, 1],
+		[1, 5, 1, 5, 4, 1],
+		[1, 2, 4, 5, 4, 1],
+		[1, 1, 5, 1, 5, 1],
+		[1, 2, 2, 5, 5, 1],
+		[1, 5, 1, 5, 1, 1]
+	];
+
+	var sliceRotate = [0, 45, 45, 90, -90, -90, 80, -90, -90, 90];
+
+	var sc = $('.showcase');
+	// if (sc.width()>650 || sc.height()>650) {
+	// 	sc.width(650);
+	// 	sc.height(650);
+	// }
+	sc.width(sc.height());
+
+	
+	for (sliceIndex = 1; sliceIndex <= 9; sliceIndex++) {
+
+		for (actionIndex = 0; actionIndex<=5; actionIndex++) {
+			animateOpacity = sliceOpacity[sliceIndex][actionIndex];
+			$('#slice-'+sliceIndex).animate({opacity: '.' + animateOpacity, }, 800)
+		}
+		animateRotate = sliceRotate[sliceIndex];
+		$('#slice-'+sliceIndex).animate({top: '50%', left: '50%', zoom: '0.0001', rotate: animateRotate/30}, {queue: false, duration: 4000})
+	};
+	
+
+	// show center logo
+	setTimeout(function(){
+		$('.showcase-logo').show().animate({opacity:"1", zoom:"1"}, 5000, function(){
+			$('#index-wrap .nav-footer').css('right', '100%').animate({right: '0%'}, 500).show();
+		});
+	}, 4000);
+	// $("#box").animate({marginTop:"50px"});
+	// http://www.w3school.com.cn/jquery/effect_animate.asp
+	// show nav bar
+	// setTimeout(function(){
+		// $('#index-wrap .nav-footer').show().css('width', '0%').animate({width: '100%'}, 1000);
+		
+	// }, 6000);
+});
+		</script>
+	</body>
+</html>
+
+<!-- 3f3b3a -->
