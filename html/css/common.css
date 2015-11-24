@@ -41,6 +41,47 @@ html, body{
   margin: 20px 0;
   text-indent: 32px;
 }
+.product-page{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+}
+.product-page .carousel-control.right, .product-page .carousel-control.left{
+  background-image: none;
+}
+.product-page .carousel-show{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel-show .item img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-page .row-show{
+  margin: 100px auto 60px auto;
+}
+.row-show div{
+  padding: 0px;
+}
+.product-page .row-show .thumbnail{
+  background-color: #f7f7f6;
+  border-radius: 0px;
+  border: 0px;
+  margin: 0px 2px;
+}
+.product-page .row-show .thumbnail a{
+  padding: 0px;
+}
+
+.product-page .row-show{
+  background-color: #f7f7f6;
+  height: 90px;
+}
+
 .footer {
   position: relative;
   width: 100%;
