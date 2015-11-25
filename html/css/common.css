@@ -23,6 +23,7 @@ html, body{
   background-color: #f7f7f6;
   height: 60px;
   font-size: 12px;
+  opacity: .8;
 }
 .navbar ul li a{
   color: #111;
