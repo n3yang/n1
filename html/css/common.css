@@ -1,20 +1,31 @@
 html, body{
   height: 100%;
   text-align: center;
+  font-family: PingHei, 'Microsoft YaHei', 'Arial Narrow';
 }
 
 
-.navbar-static-top {
-  margin-bottom: 19px;
-}
 
 .logo-75{
   width: 75px;
 }
+.logo-45{
+  width: 45px;
+}
+
+
+/* BEGIN global nav */
+.navbar-static-top {
+  margin-bottom: 19px;
+}
 
 .navbar-common{
   background-color: #f7f7f6;
-  height: 90px;
+  height: 60px;
+  font-size: 12px;
+}
+.navbar ul li a{
+  color: #111;
 }
 .navbar ul li a:hover {
   background-color: #f7f7f6;
@@ -22,6 +33,10 @@ html, body{
 .navbar ul li {
   margin: 0 20px;
 }
+
+
+
+ /* BEGIN normal page */
 .page {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -41,6 +56,8 @@ html, body{
   margin: 20px 0;
   text-indent: 32px;
 }
+
+/* BEGIN product */
 .product-page{
   padding-top: 100px;
   padding-bottom: 50px;
@@ -59,33 +76,46 @@ html, body{
 .carousel-show .item img{
   margin-left: auto;
   margin-right: auto;
+  min-height: 400px;
 }
 
-.product-page .row-show{
-  margin: 100px auto 60px auto;
+.product-page .navbar-bottom{
+  background-color: rgb(242,240,239);
+  overflow: hidden;
+  width:100%;
+  margin: 60px 0 0 0;
+  text-align: center;
+  height: auto;
 }
-.row-show div{
-  padding: 0px;
+.product-page .navbar-bottom ul{
+  width: auto;
+  /*overflow: hidden;*/
+  background-color: #fff;
+  min-width: 500px;
 }
-.product-page .row-show .thumbnail{
-  background-color: #f7f7f6;
-  border-radius: 0px;
-  border: 0px;
-  margin: 0px 2px;
+.product-page .navbar-bottom ul li {
+  padding: 0;
+  margin: 0 1px;
 }
-.product-page .row-show .thumbnail a{
-  padding: 0px;
+.product-page .navbar-bottom ul li:last-child{
+  margin-right: 0;
+}
+.product-page .navbar-bottom ul li:first-child{
+  margin-left: 0;
+}
+.product-page .navbar-bottom ul li a{
+  padding: 0;
+}
+.product-page .navbar-bottom .navbar-nav{
+  display: inline-block;
+  float: none;
 }
 
-.product-page .row-show{
-  background-color: #f7f7f6;
-  height: 90px;
-}
-
+/* BEGIN global footer */
 .footer {
   position: relative;
   width: 100%;
-  height: 60px;
+  /*height: 60px;*/
   background-color: #f5f5f5;
 }
 

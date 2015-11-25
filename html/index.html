@@ -16,12 +16,9 @@
 			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<link href="css/common.css" rel="stylesheet">
 		<style type="text/css">
 
-html, body{
-	height: 100%;
-	text-align: center;
-}
 #index-wrap{
 	margin: 0px;
 	padding: 0px;
@@ -48,9 +45,12 @@ html, body{
 }
 #index-wrap .nav-footer ul li {
 	margin: 0 20px 0 20px;
+	color: #111;
+	font-size: 12px;
 }
-#index-wrap .nav-footer ul li a:hover {
+#index-wrap .nav-footer ul li a, #index-wrap .nav-footer ul li a:hover {
 	background-color: #FFF;
+	color: #111;
 }
 #index-wrap .nav-footer .nav .logo {
 	width: 32px;
@@ -70,28 +70,18 @@ html, body{
 	position: relative;
 	width: 1px;
 	height: 1px;
-	display: none;
 }
 #index-wrap .showcase .slice img{
-	opacity: .1;
+	opacity: .5
 }
-
+#index-wrap .showcase .slice {
+	opacity: .0;
+}
 
 #slice-1 {
 	top: 6%;
 	left: 0%;
 	z-index: 1;
-}
-@keyframes combin1 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(-45deg);
-	}
 }
 
 #slice-2 {
@@ -99,38 +89,11 @@ html, body{
 	left: 30%;
 	z-index: 2;
 }
-#slice-2 img{
-
-}
-@keyframes combin2 {
-	0%  { opacity: .5;}
-	25% { opacity: .1; }
-	33% { opacity: .5; }
-	50% { opacity: .0; }
-	80% { opacity: .3; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(45deg);
-	}
-}
 
 #slice-3 {
 	top: 6%;
 	left: 66%;
 	z-index: 3;
-}
-@keyframes combin3 {
-	0%  { opacity: .1;}
-	25% { opacity: .6; }
-	33% { opacity: .2; }
-	50% { opacity: .8; }
-	66% { opacity: .2; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(90deg);
-	}
 }
 
 #slice-4 {
@@ -139,137 +102,40 @@ html, body{
 	left: 0;
 	z-index: 4;
 }
-#slice-4 img{
-	
-}
-@keyframes combin4 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	66% { opacity: .1; }
-	80% { opacity: .6; }
-	90% { opacity: .3; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(-90deg);
-	}
-}
 #slice-5 {
 	top: 40%;
 	left: 30%;
 	z-index: 5;
-}
-@keyframes combin5 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	80% { opacity: .6; }
-	90% { opacity: .3; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(-90deg);
-	}
 }
 #slice-6 {
 	top: 40%;
 	left: 66%;
 	z-index: 6;
 }
-@keyframes combin6 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(80deg);
-	}
-}
 #slice-7 {
 	top: 52.2%;
 	left: 26%;
 	z-index: 7;
-}
-@keyframes combin7 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	70% { opacity: .2; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(-90deg);;
-	}
 }
 #slice-8 {
 	top: 66%;
 	left: 30%;
 	z-index: 8;
 }
-@keyframes combin8 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	60% { opacity: .2; }
-	70% { opacity: .6; }
-	80% { opacity: .2; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(-90deg);;
-	}
-}
 #slice-9 {
 	top: 52.2%;
 	left: 76%;
 	z-index: 9;
 }
-@keyframes combin9 {
-	0%  { opacity: .1;}
-	25% { opacity: .5; }
-	33% { opacity: .2; }
-	50% { opacity: .5; }
-	100% {
-		top: 50%;
-		left: 50%;
-		transform: scale(0) rotate(90deg);;
-	}
-}
 
-/*
-#slice-1 {
 
-	z-index: 1;
-	opacity: 1;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  position: relative;
-}
-*/
 .showcase-logo{
 	display: none;
 	opacity: 0;
 	/*transform: scale(0);*/
 	zoom: 0.001;
 }
-.vertical-center{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+
 
 
 		</style>
@@ -294,15 +160,15 @@ html, body{
 			</div>
 			<nav class="nav-footer">
 				<ul class="nav nav-pills">
-					<li><a><img src="images/menu-1.png"></a></li>
-					<li><a><img src="images/menu-2.png"></a></li>
+					<!-- <li><a><img src="images/menu-1.png"></a></li> -->
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">项目合作</a></li>
+					<!-- <li><a><img src="images/menu-2.png"></a></li> -->
 					<li><a><img class="logo" src="images/logo-120.png"></a></li>
-					<!-- <li><a>你好</a></li> -->
-					<!-- <li><a>你好</a></li> -->
-					<!-- <li><a>你好</a></li> -->
-					<!-- <li><a>你好</a></li> -->
-					<li><a><img src="images/menu-3.png"></a></li>
-					<li><a><img src="images/menu-4.png"></a></li>
+					<li><a href="#">文创产品</a></li>
+					<li><a href="#">联系我们</a></li>
+					<!-- <li><a><img src="images/menu-3.png"></a></li> -->
+					<!-- <li><a><img src="images/menu-4.png"></a></li> -->
 				</ul>
 			</nav>
 		</div>
@@ -313,14 +179,24 @@ html, body{
 		<script src="js/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/qtransform.js"></script>
 		<script type="text/javascript">
 $(document).ready(function(){
 
 	var sliceOpacity = [
-
-
+		[],
+		[1, 1, 5, 2, 5, 1],
+		[1, 2, 4, 5, 4, 1],
+		[1, 5, 2, 5, 1, 1],
+		[1, 2, 4, 5, 4, 1],
+		[1, 5, 1, 5, 4, 1],
+		[1, 2, 4, 5, 4, 1],
+		[1, 1, 5, 1, 5, 1],
+		[1, 2, 2, 5, 5, 1],
+		[1, 5, 1, 5, 1, 1]
 	];
-	var slicePosition = [];
+
+	var sliceRotate = [0, 45, 45, 90, -90, -90, 80, -90, -90, 90];
 
 	var sc = $('.showcase');
 	// if (sc.width()>650 || sc.height()>650) {
@@ -329,21 +205,24 @@ $(document).ready(function(){
 	// }
 	sc.width(sc.height());
 
-	sc.children('.slice').each(function(i) {
-		i++;
-		$(this).css('-webkit-animation', 'combin' + i + ' 4s ease-in 0s 1 normal forwards')
-			.css('-o-animation', 'combin' + i + ' 4s ease-in 0s 1 normal forwards')
-			.css('-animation', 'combin' + i + ' 4s ease-in 0s 1 normal forwards')
-			.show();
+	
+	for (sliceIndex = 1; sliceIndex <= 9; sliceIndex++) {
 
-	});
+		for (actionIndex = 0; actionIndex<=5; actionIndex++) {
+			animateOpacity = sliceOpacity[sliceIndex][actionIndex];
+			$('#slice-'+sliceIndex).animate({opacity: '.' + animateOpacity, }, 800)
+		}
+		animateRotate = sliceRotate[sliceIndex];
+		$('#slice-'+sliceIndex).animate({top: '50%', left: '50%', zoom: '0.0001', rotate: animateRotate/30}, {queue: false, duration: 4000})
+	};
+	
 
 	// show center logo
 	setTimeout(function(){
 		$('.showcase-logo').show().animate({opacity:"1", zoom:"1"}, 5000, function(){
-			$('#index-wrap .nav-footer').css('right', '100%').animate({right: '0%'}, 600).show();
+			$('#index-wrap .nav-footer').css('right', '100%').animate({right: '0%'}, 500).show();
 		});
-	}, 4500);
+	}, 4000);
 	// $("#box").animate({marginTop:"50px"});
 	// http://www.w3school.com.cn/jquery/effect_animate.asp
 	// show nav bar
