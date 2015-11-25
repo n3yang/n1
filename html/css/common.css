@@ -22,11 +22,11 @@ html, body{
 .navbar-common{
   background-color: #f7f7f6;
   height: 60px;
-  font-size: 12px;
+  font-size: 14px;
   opacity: .8;
 }
 .navbar ul li a{
-  color: #111;
+  color: #555;
 }
 .navbar ul li a:hover {
   background-color: #f7f7f6;
@@ -121,7 +121,8 @@ html, body{
 }
 
 .footer{
-  padding: 20px 0;
+  padding: 30px 0 20px 0;
+  font-size: 12px;
 }
 
 .vertical-center{
