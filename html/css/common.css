@@ -72,7 +72,7 @@ html, body{
   width: 100%;
   margin: 40px auto auto auto;
 }
-.carousel-show .item img{
+.product-page .carousel-show .item img{
   margin-left: auto;
   margin-right: auto;
   min-height: 400px;
@@ -109,6 +109,123 @@ html, body{
   display: inline-block;
   float: none;
 }
+
+
+/* BEGIN product item */
+.background-gray{
+  background-color: #d9d9dc;
+}
+.breadcrumb-bar{
+  width: auto;
+  background-color: #5d5d5d;
+}
+.breadcrumb{
+  border-radius: 0;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+  width: 960px;
+  background: none;
+  display: inline-block;
+  font-size: 12px;
+  padding-left: 0px;
+}
+.breadcrumb > li + li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: ">";
+}
+.product-block{
+  width: 960px;
+  margin: auto;
+  padding-top: 30px;
+}
+.item-title{
+  color: #666;
+}
+.item-info{
+  background-color: #FFF;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  height: auto;
+  margin-top: 30px;
+}
+.item-info .item-left{
+  display: inline-block;
+  width: 630px;
+  height: 630px;
+  background-color: #fafafa;
+  padding: 60px 10px 10px 0;
+  border-radius: 10px 0 0 0;
+  -webkit-border-radius: 10px 0 0 0;
+}
+.product-item .carousel-inner .item img{
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+.carousel-indicators{
+  bottom: -55px
+}
+.carousel-indicators li{
+  background-color: #e9e9ea;
+}
+.carousel-indicators .active{
+  background-color: #afaeaf;
+}
+.item-right{
+  display: inline-block;
+  float: right;
+  width: 330px;
+  padding: 10px;
+  color: #666;
+}
+.item-right hr{
+  color: #e2e2e2;
+}
+.item-right .item-sub-title{
+  padding: 20px 20px 0 20px;
+}
+.item-right .item-detail{
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 180%;
+  max-height: 350px;
+  overflow: scroll;
+}
+.item-right .item-price{
+  margin-top: 80px;
+  padding-left: 20px;
+  font-size: 40px;
+  color: #9a2428;
+}
+.item-bottom{
+  vertical-align: middle;
+  height: 80px;
+  background-color: #f7f6f6;
+  border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  padding: 15px 20px 10px 20px;
+}
+.item-bottom div{
+  display: inline-block;
+}
+.item-bottom h5{
+  display: inline-block;
+  color: #666;
+  margin-left: 10px;
+}
+.btn-gotoshop, .btn-gotoshop:hover{
+  background-color: #962625;
+  color: #fff;
+}
+
+
+
+
+
+
 
 /* BEGIN global footer */
 .footer {
