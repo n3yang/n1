@@ -77,7 +77,11 @@ html, body{
   margin-right: auto;
   min-height: 400px;
 }
-
+@media (min-width: 1200px) {
+  .product-page .carousel-show .item img{
+    min-height: 750px;
+  }
+}
 .product-page .navbar-bottom{
   background-color: rgb(242,240,239);
   overflow: hidden;
@@ -208,10 +212,10 @@ html, body{
   -webkit-border-radius: 0px 0px 10px 10px;
   padding: 15px 20px 10px 20px;
 }
-.item-bottom div{
+.item-bottom > div{
   display: inline-block;
 }
-.item-bottom h5{
+.item-bottom > div > h5{
   display: inline-block;
   color: #666;
   margin-left: 10px;

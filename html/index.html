@@ -16,6 +16,7 @@
 			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script src="js/jquery.min.js"></script>
 		<link href="css/common.css" rel="stylesheet">
 		<style type="text/css">
 
@@ -135,7 +136,10 @@
 	/*transform: scale(0);*/
 	zoom: 0.001;
 }
-
+.showcase-background{
+	display: none;
+	opacity: .05;
+}
 
 
 		</style>
@@ -145,7 +149,7 @@
 		<div id="index-wrap" class="container-fluid">
 			<div class="showcase hidden-xs" style="display: inline-block;">
 				<div id="slice-1" class="slice"><img src="images/logo-slice-1.png"></div>
- 				<div id="slice-2" class="slice"><img src="images/logo-slice-2.png"></div>
+				<div id="slice-2" class="slice"><img src="images/logo-slice-2.png"></div>
 				<div id="slice-3" class="slice"><img src="images/logo-slice-3.png"></div>
 				<div id="slice-4" class="slice"><img src="images/logo-slice-4.png"></div>
 				<div id="slice-5" class="slice"><img src="images/logo-slice-5.png"></div>
@@ -154,6 +158,7 @@
 				<div id="slice-8" class="slice"><img src="images/logo-slice-8.png"></div>
 				<div id="slice-9" class="slice"><img src="images/logo-slice-9.png"></div>
 				<div class="vertical-center showcase-logo"><img src="images/logo-120.png" alt=""></div>
+				<div class="showcase-background"></div>
 			</div>
 			<div class="showcase visible-xs-inline-block">
 				<img src="images/logo-120.png" alt="">
@@ -162,21 +167,22 @@
 				<ul class="nav nav-pills">
 					<!-- <li><a><img src="images/menu-1.png"></a></li> -->
 					<li><a href="#">关于我们</a></li>
-					<li><a href="#">项目合作</a></li>
+					<li><a href="#">成功案例</a></li>
+					<li><a href="#">服务体系</a></li>
 					<!-- <li><a><img src="images/menu-2.png"></a></li> -->
 					<li><a><img class="logo" src="images/logo-120.png"></a></li>
 					<li><a href="#">文创产品</a></li>
+					<li><a href="#">招贤纳士</a></li>
 					<li><a href="#">联系我们</a></li>
 					<!-- <li><a><img src="images/menu-3.png"></a></li> -->
 					<!-- <li><a><img src="images/menu-4.png"></a></li> -->
 				</ul>
 			</nav>
+			<input id="sliceIndex" type="hidden" value="">
 		</div>
 
 
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="js/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/qtransform.js"></script>
@@ -205,24 +211,52 @@ $(document).ready(function(){
 	// }
 	sc.width(sc.height());
 
-	
-	for (sliceIndex = 1; sliceIndex <= 9; sliceIndex++) {
 
+	function moveSlice(sliceIndex){
 		for (actionIndex = 0; actionIndex<=5; actionIndex++) {
 			animateOpacity = sliceOpacity[sliceIndex][actionIndex];
 			$('#slice-'+sliceIndex).animate({opacity: '.' + animateOpacity, }, 800)
 		}
 		animateRotate = sliceRotate[sliceIndex];
-		$('#slice-'+sliceIndex).animate({top: '50%', left: '50%', zoom: '0.0001', rotate: animateRotate/30}, {queue: false, duration: 4000})
+
+		$('#slice-'+sliceIndex).animate({
+			top: '50%', 
+			left: '50%', 
+			zoom: '0.0001', 
+			rotate: animateRotate/30
+		}, {
+			queue: false, 
+			duration: 4000
+		})
+	
+	}
+	function _moveSlice(_sliceIndex){
+		return function(){
+			moveSlice(_sliceIndex);
+		}
+	}
+	
+	for (var sliceIndex = 1; sliceIndex <= 9; sliceIndex++) {
+		setTimeout(_moveSlice(sliceIndex), (sliceIndex-1)*500)
 	};
 	
 
 	// show center logo
 	setTimeout(function(){
 		$('.showcase-logo').show().animate({opacity:"1", zoom:"1"}, 5000, function(){
-			$('#index-wrap .nav-footer').css('right', '100%').animate({right: '0%'}, 500).show();
+			// $('#index-wrap .nav-footer').css('right', '100%').animate({right: '0%'}, 500).show();
+			$('#index-wrap .nav-footer').fadeIn(2000);
+
+			sb_height = sb_width = $(window).height() - $('#index-wrap .nav-footer').height();
+			$('.showcase-background').css({
+				'background': 'url(images/logo-white.png) center top no-repeat',
+				'backgroundSize': 'contain',
+				'height': sb_height,
+				'width': sb_width})
+				.fadeIn(3000)
+				.css('display', 'inline-block');
 		});
-	}, 4000);
+	}, 8000);
 	// $("#box").animate({marginTop:"50px"});
 	// http://www.w3school.com.cn/jquery/effect_animate.asp
 	// show nav bar
