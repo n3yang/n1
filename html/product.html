@@ -48,6 +48,7 @@
 					</ol>
 
 					<!-- Wrapper for slides -->
+					<!-- 2000x800 -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
 							<img src="images/product-c1.jpg" alt="">
@@ -82,7 +83,17 @@
 
 			<!-- End -->
 		</div>
-		<script type="text/javascript">$(document).ready(function(){$('.footer').css('backgroundColor', '#fff')});</script>
+
+<script type="text/javascript">
+$(function(){
+	$('.footer').css('backgroundColor', '#fff');
+
+	// image size: 2000x800
+	showimg = $('.product-page .carousel-show .item img');
+	showimg.height($(window).height() * 0.8);
+	showimg.width(showimg.height() * 2.5);
+});
+</script>
 
 		<footer class="footer">
 			<div class="container text-muted">
