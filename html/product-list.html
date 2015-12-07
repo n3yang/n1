@@ -4,73 +4,29 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>Item</title>
-
-		<!-- Bootstrap -->
+		<title>About Us</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
-			<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
 		<![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<link href="css/common.css" rel="stylesheet">
-
-		<style type="text/css">
-
-
-.product-list{
-	
-}
-.product-list .breadcrumb-bar{
-	background-color: #000;
-	opacity: .7;
-	color: #CCC;
-	height: 30px;
-	vertical-align: middle;
-	font-size: 12px;
-	padding-top: 6px;
-	margin: 0;
-}
-
-.product-list .glyphicon-menu-down{
-	margin-left: 6px;
-}
-
-.product-list .filter-bar{
-	background-color: #f6f6f6;
-	color: #6d6d6d;
-	height: 30px;
-	vertical-align: middle;
-	font-size: 12px;
-	padding-top: 6px;
-	margin: 790px 0 0 0;
-}
-.product-list .glyphicon-list{
-	margin-right: 6px;
-}
-.product-list .content{
-	width:960px;
-	height: auto;
-}
-.product-list .content .banner{
-
-}
-		</style>
 	</head>
 	<body>
+
 		<!-- navbar -->
 		<nav class="navbar navbar-common navbar-fixed-top">
 			<div class="container">
-				<div id="navbar" class="collapse navbar-collapse vertical-center ">
+				<div id="navbar" class="collapse navbar-collapse vertical-center">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">关于我们</a></li>
-						<li><a href="#">项目合作</a></li>
+						<li class="active"><a href="about-us.html">关于我们</a></li>
+						<li class=""><a href="case.html">成功案例</a></li>
+						<li><a href="cooperation.html">服务体系</a></li>
 						<li><img class="logo-45" src="images/logo-120.png"></li>
-						<li><a href="#">文创产品</a></li>
-						<li><a href="#">联系我们</a></li>
+						<li><a href="product.html">文创产品</a></li>
+						<li><a href="job.html">招贤纳士</a></li>
+						<li><a href="contact.html">联系我们</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
@@ -80,6 +36,7 @@
 
 		<div class="product-page container-fluid product-list">
 			<!-- BEGIN breadcrumb -->
+			<div class="product-banner"></div>
 			<div class="breadcrumb-bar row">
 				<div class="col-xs-6">
 					故宫藏品系列
@@ -90,27 +47,74 @@
 			</div>
 
 			<div class="filter-bar row">
+				<!--
 				<div class="col-xs-6">
 					<span class="glyphicon glyphicon-list"></span>筛选
 				</div>
 				<div class="col-xs-6">
 					排序方式：热门度 <span class="glyphicon glyphicon-menu-down"></span>
 				</div>
+				-->
 			</div>
 			<!-- BEGIN content -->
 			<div class="content container">
-				<ul>
-					<li><img src="images/product-item1-380x380.jpg"></li>
-					<li><img src="images/product-item2-380x380.jpg"></li>
+				<ul class="grid effect-1" id="grid">
 					
+					<li><a href=""><img src="images/product-item1-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item2-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item1-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item2-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item1-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item2-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item1-380x380.jpg"></a></li>
+					<li><a href=""><img src="images/product-item2-380x380.jpg"></a></li>
+					 
 				</ul>
 			</div>
 
+			<div>
+				<nav>
+					<ul class="pagination">
+						<li><a href="#"><span class="glyphicon glyphicon-menu-left"></a></li>
+						<li class="active"><a href="">1</a></li>
+						<li class="total"><a href="">/ 4</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-menu-right"></a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="breadcrumb-bar breadcrumb-bar-bottom row">
+				<ol class="breadcrumb">
+					<li><img src="images/logo-120.png" style="width: 16px"></li>
+					<li>宫廷珍宝</li>
+					<li>大名成华年制鸡缸杯</li>
+				</ol>
+			</div>
 
 		</div>
+
+
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/imagesloaded.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/animonscroll.js"></script>
 <script type="text/javascript">
-$('.product-list').css('background', 'url(images/product-list-bg.jpg) top center no-repeat')
+// 
+new AnimOnScroll( document.getElementById( 'grid' ), {
+	minDuration : 0.4,
+	maxDuration : 0.9,
+	viewportFactor : 0.2
+} );
+// 
+var banner_height = $(window).height()*0.8;
+$('.product-banner').css('background', 'url(images/product-list-bg-full.jpg) top center no-repeat')
+	.height(banner_height);
+$('.product-list .filter-bar').css('marginTop', banner_height-120);
 </script>
+
+
 		<footer class="footer">
 			<div class="container text-muted">
 				<p>京ICP证070359号</p>
