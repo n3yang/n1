@@ -16,12 +16,14 @@ get_header()
 					<!-- Wrapper for slides -->
 					<!-- 2000x800 -->
 					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<img src="images/product-c1.jpg" alt="">
-						</div>
-						<div class="item">
-							<img src="images/product-c2.jpg" alt="">
-						</div>
+						<?
+						$posts = get_posts( array( 'category_name'=>'product-index-carousel' ) );
+						for ($i=0; $i < count($posts); $i++) {
+							$active = $i==0 ? ' active' : '';
+							$imgsrc = get_post_thumbnail_src( $posts[$i], 'full' );
+						?>
+							<div class="item<?=$active?>"><img src="<?=$imgsrc?>" ></div>
+						<? } // endfor ?>
 					</div>
 
 					<!-- Controls -->
@@ -41,17 +43,16 @@ get_header()
 			<div class="navbar-bottom">
 				<div class="container">
 					<ul class="nav navbar-nav">
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
-						<li><a><img src="images/product-sm-1.png"></a></li>
+						<?
+						$posts = get_posts(array('category_name'=>'product-index-genre-list'));
+						for ($i=0; $i < count($posts); $i++) { 
+							$src = get_post_thumbnail_src($posts[$i], 'full');
+							$link = $posts[$i]->post_content;
+						?>
+						<li><a href="<?=$link?>"><img src="<?=$src?>"></a></li>
+						<?
+						} // endfor;
+						?>
 					</ul>
 				</div>
 			</div>

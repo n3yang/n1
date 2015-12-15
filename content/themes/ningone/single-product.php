@@ -1,4 +1,11 @@
 <?
+
+$terms = get_the_terms(get_the_ID(), 'genre');
+$genre = $terms[0];
+
+
+// $prodcut->shopping_url = get_post_meta(get_the_ID(), '_product_shopping_url', true);
+
 get_header();
 ?>
 
@@ -9,14 +16,14 @@ get_header();
 			<div class="breadcrumb-bar text-center">
 				<ol class="breadcrumb">
 					<li>在线商城</li>
-					<li>宫廷珍宝</li>
-					<li>大名成华年制鸡缸杯</li>
+					<li><?=$genre->name?></li>
+					<li><? the_title() ?></li>
 				</ol>
 			</div>
 			<div class="product-block text-center">
 				<div class="product-item text-left">
 					<div class="item-title">
-						<h1>大名成华年制鸡缸杯</h1>
+						<h1><? the_title() ?></h1>
 					</div>
 					<div class="item-info">
 						<div class="item-left">
@@ -30,12 +37,18 @@ get_header();
 
 								<!-- Wrapper for slides -->
 								<div class="carousel-inner" role="listbox">
-									<div class="item active">
-										<img src="<? bloginfo('template_url'); ?>/images/product-item1-500x500.jpg" alt="">
-									</div>
-									<div class="item">
-										<img src="<? bloginfo('template_url'); ?>/images/product-item2-500x500.jpg" alt="">
-									</div>
+
+								<?php
+								for ($i=1; $i <= 5; $i++) {
+									$active = $i==1 ? ' active' : '';
+									if (MultiPostThumbnails::has_post_thumbnail(get_post_type(), "product-image-$i")){
+										echo '<div class="item'.$active.'"><img src="'
+										.MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), "product-image-$i", NULL, 'product-image-thumbnail')
+										.'" /></div>';
+									}
+								}
+								?>
+
 								</div>
 
 								<!-- Controls -->
@@ -53,20 +66,20 @@ get_header();
 						<!-- BEGIN right info -->
 						<div class="item-right">
 							<div class="item-sub-title">
-								<h3>大名成华年制鸡缸杯</h3>
+								<h3><? the_title() ?></h3>
 							</div>
 							<hr>
-							<div class="item-detail">志在营造有中国特色的文创产业，将中国传统文化的精髓通过我们的创造力予以表现并让民众乐于接受，从而真正地促使中国优秀传统文化得到传承与发扬，这也正是【凝一】的优势所在。凭借高效的企业管理，科学的生产流程以及传统文化行业的广泛资源，好评。</div>
-							<div class="item-price">RMB 900</div>
+							<div class="item-detail"><?=$post->post_content?></div>
+							<div class="item-price">RMB <?=get_post_meta(get_the_ID(), '_product_shopping_price', true); ?></div>
 						</div>
 						<!-- BEGIN bottom -->
 						<div class="item-bottom">
 							<div>
-								<img src="<? bloginfo('template_url'); ?>/images/product-item1-500x500.jpg" width="50">
-								<h5>大名成华年制鸡缸杯</h5>
+								<img src="<?=get_post_thumbnail_src(get_the_ID(), '150')?>" width="50">
+								<h5><? the_title() ?></h5>
 							</div>
 							<div class="pull-right">
-								<a class="btn btn-gotoshop btn-lg" href="#">立即订购</a>
+								<a class="btn btn-gotoshop btn-lg" href="<?=get_post_meta(get_the_ID(), '_product_shopping_url', true)?>">立即订购</a>
 							</div>
 						</div>
 					</div>

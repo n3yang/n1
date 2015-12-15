@@ -22,9 +22,9 @@ remove_action('template_redirect', 'wp_shortlink_header', 11 );
 
 
 
-// add_theme_support('post-thumbnails');
-// add_theme_support('post-formats', array('video') );
-// add_theme_support('post-formats',array('gallery'));
+add_theme_support('post-thumbnails');
+add_theme_support('post-formats', array('link') );
+// add_theme_support('post-formats', array('gallery'));
 
 
 //MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image');
@@ -90,32 +90,37 @@ add_action( 'load-index.php', function () {
  * @param  integer $range 
  * @return bool    all ways true
  */
-function ggshop_pagin_nav($range = 4){
+function ningone_pagin_nav(){
 	global $wp_query;
 	$paged = get_query_var('paged');
 	if ( !$max_page ) {$max_page = $wp_query->max_num_pages;}
-	if($max_page > 1){if(!$paged){$paged = 1;}
-	echo '<div class="jogger">';
-	if($paged != 1){echo "<a href='" . get_pagenum_link(1) . "' class='extend'>首页</a>";}
-	previous_posts_link('上页');
-	if($max_page > $range){
-		if($paged < $range){for($i = 1; $i <= ($range + 1); $i++){echo "<a href='" . get_pagenum_link($i) ."'";
-		if($i==$paged)echo " class='current'";echo ">$i</a>";}}
-	elseif($paged >= ($max_page - ceil(($range/2)))){
-		for($i = $max_page - $range; $i <= $max_page; $i++){echo "<a href='" . get_pagenum_link($i) ."'";
-		if($i==$paged)echo " class='current'";echo ">$i</a>";}}
-	elseif($paged >= $range && $paged < ($max_page - ceil(($range/2)))){
-		for($i = ($paged - ceil($range/2)); $i <= ($paged + ceil(($range/2))); $i++){echo "<a href='" . get_pagenum_link($i) ."'";if($i==$paged) echo " class='current'";echo ">$i</a>";}}}
-	else{for($i = 1; $i <= $max_page; $i++){echo "<a href='" . get_pagenum_link($i) ."'";
-	if($i==$paged)echo " class='current'";echo ">$i</a>";}}
-	next_posts_link('下页');
-	if($paged != $max_page){echo "<a href='" . get_pagenum_link($max_page) . "' class='extend'>尾页</a>";}
-	echo '</div>';}
+	if(!$paged){$paged = 1;}
+	echo '<nav><ul class="pagination">';
+
+	if ( $paged==1 ){
+		echo '<li><a href="#"><span class="glyphicon glyphicon-menu-left"></a></li>';
+	} else {
+		echo '<li><a href="'.previous_posts(false).'"><span class="glyphicon glyphicon-menu-left"></a></li>';
+	}
+	echo '<li class="active"><a href="#">' . $paged . '</a></li>';
+	echo '<li class="total"><a href="#">/ '. $max_page . '</a></li>';
+	if ( $paged+1 <= $max_page ) {
+		echo '<li><a href="'.next_posts( $max_page, false ).'"><span class="glyphicon glyphicon-menu-right"></a></li>';
+	} else {
+		echo '<li><a href="#"><span class="glyphicon glyphicon-menu-right"></a></li>';
+	}
+	echo '</ul></nav>';
 }
 
 
-
-
+function get_post_thumbnail_src( $post_id, $size='full' ){
+	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );
+	if ( !empty( $img[0] ) ) {
+		return $img[0];
+	} else {
+		return '';
+	}
+}
 
 
 
@@ -135,13 +140,15 @@ if (class_exists('MultiPostThumbnails')){
 	for ($i=1;$i<=5;$i++) {
 		new MultiPostThumbnails(array(
 			'label'		=> "详情页图片$i",
-			'id'		=> "single-image-$i",
+			'id'		=> "product-image-$i",
 			'post_type' => 'product'
 			)
 		);
 	}
-	add_image_size('single-image-thumbnail', 500, 500);
+	add_image_size('product-image-thumbnail', 500, 500);
 }
+
+
 //MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image');
 
 

@@ -1,4 +1,6 @@
 <?
+$paged = get_query_var('paged');
+$genre = get_term_by( 'slug',  get_query_var('term'), 'genre' );
 get_header();
 ?>
 
@@ -10,10 +12,10 @@ get_header();
 			<div class="product-banner"></div>
 			<div class="breadcrumb-bar row">
 				<div class="col-xs-6">
-					故宫藏品系列
+					<?=$genre->name?>
 				</div>
 				<div class="col-xs-6">
-					浏览全部 <span class="glyphicon glyphicon-menu-down"></span>
+					<a href="/product/">浏览全部</a> <span class="glyphicon glyphicon-menu-down"></span>
 				</div>
 			</div>
 
@@ -30,20 +32,25 @@ get_header();
 			<!-- BEGIN content -->
 			<div class="content container">
 				<ul class="grid effect-1" id="grid">
-					
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item1-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item2-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item1-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item2-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item1-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item2-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item1-380x380.jpg"></a></li>
-					<li><a href=""><img src="<? bloginfo('template_url'); ?>/images/product-item2-380x380.jpg"></a></li>
-					 
+					<?
+					$args = array(
+						'genre'				=> $genre->term,
+						'post_type'			=> 'product',
+						'posts_per_page'	=> 2,
+						'paged'				=> $paged>1 ? $paged : 1
+					);
+					$posts = query_posts($args);
+					if (have_posts()){ while(have_posts()) : the_post();
+						$imgsrc = get_post_thumbnail_src( get_the_ID(), 'full' );
+					?>
+					<li><a href="<?=the_permalink()?>"><img src="<?=$imgsrc?>"></a></li>
+					<? endwhile;} ?>
 				</ul>
 			</div>
 
 			<div>
+				<? ningone_pagin_nav() ?>
+				<!--
 				<nav>
 					<ul class="pagination">
 						<li><a href="#"><span class="glyphicon glyphicon-menu-left"></a></li>
@@ -52,13 +59,13 @@ get_header();
 						<li><a href="#"><span class="glyphicon glyphicon-menu-right"></a></li>
 					</ul>
 				</nav>
+				-->
 			</div>
 
 			<div class="breadcrumb-bar breadcrumb-bar-bottom row">
 				<ol class="breadcrumb">
 					<li><img src="<? bloginfo('template_url'); ?>/images/logo-120.png" style="width: 16px"></li>
-					<li>宫廷珍宝</li>
-					<li>大名成华年制鸡缸杯</li>
+					<li><?=$genre->name?></li>
 				</ol>
 			</div>
 

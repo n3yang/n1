@@ -89,11 +89,11 @@ class PostProduct
 	public function add_meta_box($post_type)
 	{
 		add_meta_box( 
-			'product-shopping-url', 
-			'购买地址', 
+			'product-info', 
+			'产品信息', 
 			array( $this, 'render_meta_box' ), 
 			'product', 
-			'normal',
+			'advanced',
 			'default' 
 		);
 	}
@@ -105,10 +105,12 @@ class PostProduct
 	public function render_meta_box($post)
 	{
 		wp_nonce_field( 'product_save', 'product_save_nonce' );
-		$shopping_url = get_post_meta($post->ID, '_product_shopping_url', true);
+		$url = get_post_meta($post->ID, '_product_shopping_url', true);
+		$price = get_post_meta($post->ID, '_product_shopping_price', true);
 
 		echo '
-			<input type="input" name="product_shopping_url" value="'.$shopping_url.'" placeholder="请输入购买地址" style="width:100%">
+			<p>购买地址：<input type="input" name="product_shopping_url" value="'.$url.'" placeholder="请输入购买地址" size="50"></p>
+			<p>购买价格：<input type="input" name="product_shopping_price" value="'.$price.'" placeholder="请输入价格" size="10"></p>
 		';
 	}
 
@@ -133,12 +135,13 @@ class PostProduct
 			}
 		}
 		// save data
-		if ( ! isset( $_POST['product_shopping_url'] ) ) {
-			return $post_id;
-		}
-
+	
 		$shopping_url = sanitize_text_field( $_POST['product_shopping_url'] );
 		update_post_meta( $post_id, '_product_shopping_url', $shopping_url );
+		$shopping_price = sanitize_text_field( $_POST['product_shopping_price'] );
+		update_post_meta( $post_id, '_product_shopping_price', $shopping_price);
+
+		return $post_id;
 	}
 
 
