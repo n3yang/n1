@@ -9,14 +9,18 @@
 
 
 // turn off auto update
-remove_action( 'wp_version_check', 'wp_version_check' );
-remove_action('wp_head', 'wp_generator');
-add_filter('pre_site_transient_update_core', function(){return;});
-// turn off links in header
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('template_redirect', 'wp_shortlink_header', 11 );
+// remove_action( 'wp_version_check', 'wp_version_check' );
+// remove_action('wp_head', 'wp_generator');
+// add_filter('pre_site_transient_update_core', function(){return;});
 
+// turn off links in header
+// remove_action('wp_head', 'rsd_link');
+// remove_action('wp_head', 'wlwmanifest_link');
+// remove_action('template_redirect', 'wp_shortlink_header', 11 );
+
+// Remove the Link header for the WP REST API （WP 4.4）
+// [link] => <http://www.example.com/wp-json/>; rel="https://api.w.org/"
+remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
 
 // echo z_taxonomy_image_url($cat->term_id);
 

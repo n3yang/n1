@@ -34,9 +34,8 @@ get_header();
 				<ul class="grid effect-1" id="grid">
 					<?
 					$args = array(
-						'genre'				=> $genre->term,
+						'genre'				=> $genre->slug,
 						'post_type'			=> 'product',
-						'posts_per_page'	=> 2,
 						'paged'				=> $paged>1 ? $paged : 1
 					);
 					$posts = query_posts($args);
@@ -87,7 +86,7 @@ new AnimOnScroll( document.getElementById( 'grid' ), {
 } );
 // 
 var banner_height = $(window).height()*0.8;
-$('.product-banner').css('background', 'url(<? bloginfo('template_url'); ?>/images/product-list-bg-full.jpg) top center no-repeat')
+$('.product-banner').css('background', 'url(<? if (function_exists('z_taxonomy_image')) echo z_taxonomy_image_url($genre->term_id); ?>) top center no-repeat')
 	.height(banner_height);
 $('.product-list .filter-bar').css('marginTop', banner_height-120);
 </script>

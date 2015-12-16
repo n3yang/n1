@@ -15,7 +15,7 @@ class PostProduct
 		}
 
 		// hook into the init action and call create_product_taxonomies when it fires
-		add_action( 'init', array( $this, 'create_taxonomies') );
+		add_action( 'init', array( $this, 'create_taxonomies'), 0 );
 		add_action( 'init', array( $this, 'create_post_type' ) );
 	}
 
@@ -80,6 +80,7 @@ class PostProduct
 		// add_rewrite_tag('%filter%','([^&]+)');
 		// add_rewrite_rule('^product/genre/([^/]*)/filter/([^/]*)/?$', 'index.php?genre=$matches[1]&filter=$matches[2]', 'top' );
 		// add_rewrite_rule('^product/genre/([^/]*)/filter/([^/]*)/page/?([0-9]{1,})/?$', 'index.php?genre=$matches[1]&filter=$matches[2]&paged=$matches[3]', 'top' );
+		// add_rewrite_rule('product/genre/(.+?)/page/?([0-9]{1,})/?$', 'index.php?genre=$matches[1]&paged=$matches[2]', 'top');
 	}
 
 	/**
