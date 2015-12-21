@@ -67,7 +67,28 @@ showimg = $('.product-page .carousel-show .item img');
 showimg.height($(window).height() * 0.7);
 showimg.width(showimg.height() * 2.5);
 $(function(){
+	// change footer background color
 	$('.footer').css('backgroundColor', '#fff');
+	// show bottom nav step by step
+	var nbul = $('.navbar-bottom ul');
+		nbnum = parseInt(nbul.width() / 200);
+		nbround = 0;
+
+	function showNbul(){
+		$('.navbar-bottom ul li').each(function(i,el) {
+			start = nbnum * nbround;
+			if ( i>=start && i<=start+nbnum){
+				$(el).fadeIn();
+			} else {
+				$(el).fadeOut();
+			}
+		});
+		nbround++;
+		if ((nbround * nbnum) > $('.navbar-bottom ul').children().length){
+			nbround = 0;
+		}
+	}
+	setInterval(showNbul, 5000);
 });
 </script>
 

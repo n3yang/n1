@@ -171,7 +171,7 @@ html, body{
 					<li><a href="/case">成功案例</a></li>
 					<li><a href="/cooperation">服务体系</a></li>
 					<li><a><img class="logo" src="<? bloginfo('template_url'); ?>/images/logo-120.png"></a></li>
-					<li><a href="/products">文创产品</a></li>
+					<li><a href="/product">文创产品</a></li>
 					<li><a href="/jobs">招贤纳士</a></li>
 					<li><a href="/contacts">联系我们</a></li>
 				</ul>
