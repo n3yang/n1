@@ -15,7 +15,7 @@ get_header();
 					<?=$genre->name?>
 				</div>
 				<div class="col-xs-6">
-					<a href="/product/">浏览全部</a> <span class="glyphicon glyphicon-menu-down"></span>
+					<a href="/product/">浏览全部 <span class="glyphicon glyphicon-menu-down"></span></a>
 				</div>
 			</div>
 

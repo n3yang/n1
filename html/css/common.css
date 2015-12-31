@@ -229,7 +229,9 @@ body{
   padding-top: 6px;
   margin: 0;
 }
-
+.product-list .breadcrumb-bar a{
+  color: #CCC;
+}
 .product-list .glyphicon-menu-down{
   margin-left: 6px;
 }
